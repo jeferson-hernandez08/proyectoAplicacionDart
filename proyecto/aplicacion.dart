@@ -1,10 +1,11 @@
 void main() {
-
-for (int i = 0; i < 5; i++){   //Conflicto.
+int i = 0;
+while (i < 5){   //Conflicto.
   print(i);
+  i++;
 }
 
-//Se CONFLICTO realiza la tarea
+//Se CONFLICTO realiza la tarea . PRUEBAS
 
 
 
