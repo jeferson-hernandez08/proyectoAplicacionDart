@@ -1,8 +1,8 @@
 void main() {
-int i = 0;
-while (i < 5){   //Conflicto.
+int num = 0; //hola
+for (int i = 0; i < 5; i++){   //Conflicto.
   print(i);
-  i++;
+  print("Hola");
 }
 
 //Se CONFLICTO realiza la tarea . PRUEBAS
