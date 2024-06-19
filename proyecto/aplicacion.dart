@@ -1,8 +1,10 @@
 void main() {
 
-//Prueba de codigo
+for (int i = 0; i < 5; i++){   //Conflicto.
+  print(i);
+}
 
-//Se realiza la tarea
+//Se CONFLICTO realiza la tarea
 
 
 
