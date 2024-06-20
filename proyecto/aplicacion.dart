@@ -4,9 +4,10 @@ void main() {
 
   //DECLARACION VARIABLES - LISTAS - MATRICES
   int opcion;      //Variable para preguntar opcion del menu 
-  List <String> vectorTemas = [];   
+  List <String> vectorTemas = [];          //Vector para temas. 
   String tema;
-  int cantTemas = 4;       //Cantidad de temas que se ingresan
+  int cantTemas = 4;                      //Cantidad de temas que se ingresan
+  List <String> vectorEstudiantes = [];  //Vector para temas.
 
   //ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
   //Punto # 2 Creacion de los temas de exposicion.
@@ -20,6 +21,7 @@ void main() {
     print("El vector va en:");
     print(vectorTemas);
   }
+  // print("Ingrese primero los $cantTemas temas para cada grupo:"); //Ndres Jeferdsadsasdasadsad
 
   //Punto # 1 Menu de funcionabilidades.
   do {
