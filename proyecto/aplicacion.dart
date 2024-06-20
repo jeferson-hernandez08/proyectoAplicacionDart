@@ -9,7 +9,7 @@ void main() {
   int cantTemas;                      //Cantidad de temas que se ingresan
   List <String> vectorEstudiantes = [];  //Vector para temas.
   String estudiantes;
-  int cantEstudiantes = 4;
+  int cantEstudiantes;
 
   //ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
   //Punto # 2 Creacion de los temas de exposicion.
@@ -25,6 +25,8 @@ void main() {
     print("El vector va en:");
     print(vectorTemas);
   }
+  print("Ingrese la cantidad de estudiantes del grupo:");
+  cantEstudiantes = int.parse(stdin.readLineSync()!);
   print("Ingrese primero los $cantEstudiantes estudiantes del grupo:"); 
   for ( int i = 0; i < cantEstudiantes; i++) {
     print("Ingrese estudiante # ${i+1}:");
