@@ -4,7 +4,8 @@ void main() {
 
   //DECLARACION VARIABLES - LISTAS - MATRICES
   int opcion;      //Variable para preguntar opcion del menu 
-  List <String> vectorTemas = [];          //Vector para temas. 
+  List <String> vectorTemas = [];    //Vector para temas.
+  List <String> vectorComplejidad = ['Facil', 'Medio', 'dificil'];      //Vector para complejidad de los temas 
   String tema;
   int cantTemas;                      //Cantidad de temas que se ingresan
   List <String> vectorEstudiantes = [];  //Vector para temas.
@@ -14,16 +15,42 @@ void main() {
   //ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
   //Punto # 2 Creacion de los temas de exposicion.
   print("*******************************************************************");
-  print("Bienvenido a la aplicacion de seleccion aleatoria de estudiantes.");
-  print("Ingrese la cantidad de temas en total para el grupo:");
+  print("Bienvenido a la aplicacion de seleccion aleatoria de estudiantes por temas de exposición.");
+  print("Ingrese la cantidad de temas en total para el grupo y su complejidad:");
   cantTemas = int.parse(stdin.readLineSync()!);
-  print("Ingrese primero los $cantTemas temas para cada grupo:");
+  print("Ingrese el nombre de los $cantTemas temas para cada grupo:");
   for ( int i = 0; i < cantTemas; i++) {
     print("Ingrese el tema # ${i+1}:");
     tema = stdin.readLineSync()!;
     vectorTemas.add(tema);
-    print("El vector va en:");
-    print(vectorTemas);
+    print("Ingrese nivel de complejidad para este tema:");//Se tendrán 3 niveles de complejidad (nivel 1-nivel 2-nivel 3)
+     do {
+    print("**********************************************");
+    print("Seleccione el nivel de complejidad:");
+    print("1. Nivel: ${vectorComplejidad[0]}");
+    print("2. Nivel: ${vectorComplejidad[1]}");
+    print("3. Nivel: ${vectorComplejidad[2]}");
+    print("9. Para Salir");
+    print("**********************************************");
+    print("Ingrese la opcion desea:");
+    opcion = int.parse(stdin.readLineSync()!);
+
+    switch (opcion) {
+      case 1:
+        print("Para este tema ${vectorTemas[0]} el nivel de complejidad es ${vectorComplejidad[0]}, se requiere 2 estudiantes");
+      break;
+      case 2: 
+        print("Para este tema ${vectorTemas[1]} el nivel de complejidad es ${vectorComplejidad[1]}, se requiere 3 estudiantes");
+      break;
+      case 3: 
+        print("Para este tema ${vectorTemas[2]} el nivel de complejidad es ${vectorComplejidad[2]}, se requiere 4 estudiantes");
+      break;
+      case 9: 
+        print("Hasta la Proxima");
+      break;
+    }
+  }
+  while ( opcion != 9 );
   }
   print("Ingrese la cantidad de estudiantes del grupo:");
   cantEstudiantes = int.parse(stdin.readLineSync()!);
