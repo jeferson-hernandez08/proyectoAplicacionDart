@@ -43,7 +43,7 @@ void main() {
   //Punto # 2 Creacion de los temas de exposicion.
   print("*******************************************************************");
   print("Bienvenido a la aplicacion de seleccion aleatoria de estudiantes y temas de exposición.");
-  print("Desea seleccionar los grupos con temas predefinido (opcion 1) o temas de su interés (opción 2)?");
+  print("Desea seleccionar los grupos con temas predefinido (opcion 1) o temas de su interés (opción 2) o salir (opcion 3)?");
   opcion = int.parse(stdin.readLineSync()!);
   switch  (opcion) {
     case 1:
