@@ -34,16 +34,16 @@ void main() {
 'JUAN DANIEL GOMEZ LASERNA',		
 'YERSON STIVEN HERRERA OBANDO',		
 'MATEO HERRERA VARGAS',		
-'ALEJANDRO VALLEJO ESCOBAR'];  //Vector para temas.
+'ALEJANDRO VALLEJO ESCOBAR'];  //Vector para temas. //ESTA ES UNA PRUEBA HOLA
   //String estudiantes;
   int cantEstudiantes;
   List <String> vectorComplejidad = ['Muy facil','Facil', 'Medio', 'dificil'];      //Vector para complejidad de los temas 
 
   //ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
   //Punto # 2 Creacion de los temas de exposicion.
-  print("*******************************************************************");
+  print("***************************************************************************************");
   print("Bienvenido a la aplicacion de seleccion aleatoria de estudiantes y temas de exposición.");
-  print("Desea seleccionar los grupos con temas predefinido (opcion 1) o temas de su interés (opción 2) o salir (opcion 3)?");
+  print("Desea seleccionar los grupos con temas predefinido (opcion 1) o temas de su interés (opción 2) o salir (opcion 9)?");
   opcion = int.parse(stdin.readLineSync()!);
   switch  (opcion) {
     case 1:
