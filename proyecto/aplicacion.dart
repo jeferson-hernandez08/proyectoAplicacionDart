@@ -4,11 +4,11 @@ void main() {
 
   //DECLARACION VARIABLES - LISTAS - MATRICES
   int opcion;      //Variable para preguntar opcion del menu 
-  //List <String> vectorTemas = ['tema1', 'tema2','tema3','tema4','tema5','tema6','tema7'];   //Vector para temas.
+  List <String> vectorTemasPredef = ['tema1', 'tema2','tema3','tema4','tema5','tema6','tema7'];   //Vector para temas.
   List <String> vectorTemaInteres =[];
   String tema;
   int cantTemas;                      //Cantidad de temas que se ingresan
-  List <String> vectorEstudiantes = ['ANDRES FELIPE SANCHEZ HURTADO',
+  List <String> vectorEstudiantesPredef = ['ANDRES FELIPE SANCHEZ HURTADO',
 'ANGIE DAHIANA RIOS QUINTERO',
 'CRISTIAN ALVAREZ ARANZAZU',
 'DANIEL ESTIVEN ARBOLEDA DUQUE',
@@ -34,10 +34,13 @@ void main() {
 'JUAN DANIEL GOMEZ LASERNA',		
 'YERSON STIVEN HERRERA OBANDO',		
 'MATEO HERRERA VARGAS',		
-'ALEJANDRO VALLEJO ESCOBAR'];  //Vector para temas. //ESTA ES UNA PRUEBA HOLA
-  //String estudiantes;
+'ALEJANDRO VALLEJO ESCOBAR']; 
   int cantEstudiantes;
   List <String> vectorComplejidad = ['Muy facil','Facil', 'Medio', 'dificil'];      //Vector para complejidad de los temas 
+  List <String> vectorEstudiantesInteres =[];
+  String estudiantes;
+  
+  
 
   //ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
   //Punto # 2 Creacion de los temas de exposicion.
@@ -48,7 +51,16 @@ void main() {
   switch  (opcion) {
     case 1:
       print("Ha seleccionado lista de temas predefinidos");
-      print("Escoja el tema a exponer:");
+      print("Escoja el tema a exponer de la siguiente lista:");
+      print("Los temas son:");
+      for (int i = 0; i < vectorTemasPredef.length; i++ ) {
+        print("Tema # ${i+1}: ${vectorTemasPredef[i]}");
+      }
+      //vectorTemasPredef = Random().nextInt(vectorTemasPredef[i]);
+      print("La lista de estudiantes es:"); 
+      for (int i = 0; i < vectorEstudiantesPredef.length; i++ ) {
+        print("# ${i+1}: ${vectorEstudiantesPredef[i]}");
+      }
     break;
     case 2:
       print("Ha seleccionado temas de su interés");
@@ -104,10 +116,11 @@ void main() {
       print("Ingrese primero los $cantEstudiantes estudiantes del grupo:"); 
       for ( int i = 0; i < cantEstudiantes; i++) {
         print("Ingrese estudiante # ${i+1}:");
-        //estudiantes = stdin.readLineSync()!;
-        //vectorEstudiantes.add(estudiantes);
-        print("El vector va en:");
-        print(vectorEstudiantes);
+        estudiantes = stdin.readLineSync()!;
+        vectorEstudiantesInteres.add(estudiantes);
+      }
+      for (int i = 0; i < vectorEstudiantesInteres.length; i++) {
+        print("estudiante # ${i+1}: ${vectorEstudiantesInteres[i]}");
       }
 
       //Punto # 1 Menu de funcionabilidades.
