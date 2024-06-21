@@ -1,0 +1,1 @@
+tudiantes = stdin.readLineSync()!;
