@@ -4,7 +4,7 @@ void main() {
 
   //DECLARACION VARIABLES - LISTAS - MATRICES
   int opcion;      //Variable para preguntar opcion del menu 
-  List <String> vectorTemas = [];    //Vector para temas.
+  List <String> vectorTemas = ['tema1', 'tema2','tema3','tema4','tema5','tema6','tema7'];    //Vector para temas.
   String tema;
   int cantTemas;                      //Cantidad de temas que se ingresan
   List <String> vectorEstudiantes = [];  //Vector para temas.
