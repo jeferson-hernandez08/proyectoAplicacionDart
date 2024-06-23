@@ -1,167 +1,109 @@
 import 'dart:io';
+import 'dart:math';
 
 void main() {
-
-  //DECLARACION VARIABLES - LISTAS - MATRICES
-  int opcion;      //Variable para preguntar opcion del menu 
-  List <String> vectorTemasPredef = ['P.O.O', 'Diferencia entre P.O.O y programacion estructurada','Qué es objejo? Que es clase?, diferencia entre ambos','Qué es abstracción?','Qué es encapsulamiento?','Qué es herencia?','Qué es polimorfismo? y un ejemplo', 'Cuáles son los principales diagramas de UML?'];   //Vector para temas.
-  List <String> vectorTemaInteres =[];
-  String tema;
-  int cantTemas;                      //Cantidad de temas que se ingresan
-  List <String> vectorEstudiantesPredef = ['ANDRES FELIPE SANCHEZ HURTADO',
-'ANGIE DAHIANA RIOS QUINTERO',
-'CRISTIAN ALVAREZ ARANZAZU',
-'DANIEL ESTIVEN ARBOLEDA DUQUE',
-'DAVID ANDRES MORALES GUAPACHA',
-'DAVID STIVEN OCAMPO LONDOÑO',
-'ESTEBAN REYES AGUDELO',
-'JACOBO GALVIS JIMENEZ',
-'JAIME ANDRES CALLE SALAZAR',	
-'JEFERSON MAURICIO HERNANDEZ LADINO',		
-'JHON ALEXANDER PINEDA OSORIO',		
-'JOSE MIGUEL SIERRA ARISTIZABAL',		
-'JOSÉ SEBASTIÁN OCAMPO LÓPEZ',		
-'JUAN ANDRES OSORIO GOMEZ',		
-'JUAN DIEGO CALVO OSORIO',		
-'JUAN ESTEBAN LOPEZ CALLE',		
-'JUAN PABLO RIOS ARISTIZABAL',		
-'MARIA PAULA MELO SOLANO',		
-'MIGUEL ANGEL PEÑA JIMENEZ',		
-'SAMUEL CASTAÑO CARDONA',		
-'JUAN JOSÉ POSADA PÉREZ',		
-'ALEJANDRO SERNA LONDOÑO',		
-'JUAN MANUEL ZULUAGA RINCON',		
-'JUAN DANIEL GOMEZ LASERNA',		
-'YERSON STIVEN HERRERA OBANDO',		
-'MATEO HERRERA VARGAS',		
-'ALEJANDRO VALLEJO ESCOBAR']; 
-  int cantEstudiantes;
-  List <String> vectorComplejidad = ['Muy facil','Facil', 'Medio', 'dificil'];      //Vector para complejidad de los temas 
-  List <String> vectorEstudiantesInteres =[];
-  String estudiantes;
+  // DECLARACIÓN VARIABLES - LISTAS - MATRICES
+  int opcion; // Variable para preguntar opción del menú 
+  List<String> vectorTemasPredef = [
+    'P.O.O', 
+    'Diferencia entre P.O.O y programacion estructurada', 
+    'Qué es objeto? Qué es clase? Diferencia entre ambos',
+    'Qué es abstracción?',
+    'Qué es encapsulamiento?',
+    'Qué es herencia?',
+    'Qué es polimorfismo? Y un ejemplo',
+    'Cuáles son los principales diagramas de UML?'
+  ]; // Vector para temas predefinidos
+  List<String> vectorTemaInteres = [];
+  List<String> vectorEstudiantesPredef = [
+    'ANDRES FELIPE SANCHEZ HURTADO', 'ANGIE DAHIANA RIOS QUINTERO', 'CRISTIAN ALVAREZ ARANZAZU', 
+    'DANIEL ESTIVEN ARBOLEDA DUQUE', 'DAVID ANDRES MORALES GUAPACHA', 'DAVID STIVEN OCAMPO LONDOÑO', 
+    'ESTEBAN REYES AGUDELO', 'JACOBO GALVIS JIMENEZ', 'JAIME ANDRES CALLE SALAZAR', 'JEFERSON MAURICIO HERNANDEZ LADINO', 
+    'JHON ALEXANDER PINEDA OSORIO', 'JOSE MIGUEL SIERRA ARISTIZABAL', 'JOSÉ SEBASTIÁN OCAMPO LÓPEZ', 
+    'JUAN ANDRES OSORIO GOMEZ', 'JUAN DIEGO CALVO OSORIO', 'JUAN ESTEBAN LOPEZ CALLE', 
+    'JUAN PABLO RIOS ARISTIZABAL', 'MARIA PAULA MELO SOLANO', 'MIGUEL ANGEL PEÑA JIMENEZ', 
+    'SAMUEL CASTAÑO CARDONA', 'JUAN JOSÉ POSADA PÉREZ', 'ALEJANDRO SERNA LONDOÑO', 
+    'JUAN MANUEL ZULUAGA RINCON', 'JUAN DANIEL GOMEZ LASERNA', 'YERSON STIVEN HERRERA OBANDO', 
+    'MATEO HERRERA VARGAS', 'ALEJANDRO VALLEJO ESCOBAR'
+  ]; // Lista de estudiantes predefinidos
+  List<String> vectorComplejidad = ['Muy fácil', 'Fácil', 'Medio', 'Difícil']; // Vector para complejidad de los temas
+  List<String> vectorEstudiantesInteres = [];
   
-  
-
-  //ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
-  //Punto # 2 Creacion de los temas de exposicion.
-  print("***************************************************************************************");
-  print("Bienvenido a la aplicacion de seleccion aleatoria de estudiantes y temas de exposición.");
-  print("Desea seleccionar los grupos con temas predefinido (opcion 1) o temas de su interés (opción 2) o salir (opcion 9)?");
-  opcion = int.parse(stdin.readLineSync()!);
-  switch  (opcion) {
-    case 1:
-      print("Ha seleccionado listas de temas y estudiantes predefinidos");
-      print("Escoja el tema a exponer de la siguiente lista:");
-      print("Los temas son:");
-      for (int i = 0; i < vectorTemasPredef.length; i++ ) {
-        print("Exposición # ${i+1}: ${vectorTemasPredef[i]}");
-      }
-      print("*"*50);
-      //vectorTemasPredef = Random().nextInt(vectorTemasPredef[i]);
-      print("La lista de estudiantes es:"); 
-      for (int i = 0; i < vectorEstudiantesPredef.length; i++ ) {
-        print("# ${i+1}. ${vectorEstudiantesPredef[i]}");
-      }
-      print("*"*50);
-    print("La lista aleatoria temas/estudiantes es:");
-
-    
-    break;
-    case 2:
-      print("Ha seleccionado temas de su interés");
-      //Se hace selección 1 (predefinido) o 2(tema de interés) 
-      //print("Ingrese la opcion deseada:");
-      //opcion = int.parse(stdin.readLineSync()!);
-
-      print("Ingrese la cantidad de temas en total para el grupo");
-      cantTemas = int.parse(stdin.readLineSync()!);
-      print("Ingrese el tema a exponer de su interés y su nivel de complejidad:");
-      print("Ingrese el nombre de los $cantTemas temas para cada grupo:");
-      for ( int i = 0; i < cantTemas; i++) {
-        print("Ingrese el tema # ${i+1}:");
-        tema = stdin.readLineSync()!;
-        vectorTemaInteres.add(tema);
-        print("Ingrese nivel de complejidad para este tema # ${i+1} ${vectorTemaInteres[i]}:"); //Se tendrán 3 niveles de complejidad (nivel 1-nivel 2-nivel 3)
-        // do {
-          print("**********************************************");
-          print("Seleccione el nivel de complejidad:");
-          print("1. Nivel: ${vectorComplejidad[0]}");
-          print("2. Nivel: ${vectorComplejidad[1]}");
-          print("3. Nivel: ${vectorComplejidad[2]}");
-          print("4. Nivel: ${vectorComplejidad[3]}");
-          print("9. Para Salir");
-          print("**********************************************");
-          print("Ingrese la opcion deseada:");
-          opcion = int.parse(stdin.readLineSync()!);
-
-          switch (opcion) {
-            case 1: 
-              print("Para este tema # ${i+1} ${vectorTemaInteres[i]} el nivel de complejidad es ${vectorComplejidad[0]}, se requiere 1 estudiante");
-            break;
-            case 2: 
-              print("Para este tema # ${i+1} ${vectorTemaInteres[i]} el nivel de complejidad es ${vectorComplejidad[1]}, se requiere 2 estudiantes");
-            break;
-            case 3: 
-              print("Para este tema # ${i+1} ${vectorTemaInteres[i]} el nivel de complejidad es ${vectorComplejidad[2]}, se requiere 3 estudiantes");
-            break;
-            case 4:
-              print("Para este tema # ${i+1} ${vectorTemaInteres[i]} el nivel de complejidad es ${vectorComplejidad[3]}, se requiere 4 estudiantes");
-            case 9: 
-              print("Hasta la Proxima");  //Validar si lo quitamos o lo dejamos. 
-            break;
-            default:
-              print("¡Opcion incorrecta!.");
-              print("Ingrese opcion '1,2,3,' o '9 para salir"); 
-          }
-        // } //do
-        // while ( opcion != 9 );   //Verificar DoWhile para opcion 9 salir o no ponerlo el salir. 
-      } //for
-      print("Ingrese la cantidad de estudiantes del grupo:");
-      cantEstudiantes = int.parse(stdin.readLineSync()!);
-      print("Ingrese primero los $cantEstudiantes estudiantes del grupo:"); 
-      for ( int i = 0; i < cantEstudiantes; i++) {
-        print("Ingrese estudiante # ${i+1}:");
-        estudiantes = stdin.readLineSync()!;
-        vectorEstudiantesInteres.add(estudiantes);
-      }
-      for (int i = 0; i < vectorEstudiantesInteres.length; i++) {
-        print("estudiante # ${i+1}: ${vectorEstudiantesInteres[i]}");
-      }
-
-      //Punto # 1 Menu de funcionabilidades.
-      do {
-        //Realizacion de la interface menu. 
-        print("**********************************************");
-        print("Seleccione el tema a escojer:");
-        print("1. Tema # 1: ${vectorTemaInteres[0]}");
-        print("2. Tema # 2: ${vectorTemaInteres[1]}");
-        print("3. Tema # 3: ${vectorTemaInteres[2]}");
-        print("4. Tema # 4: ${vectorTemaInteres[3]}");
-        print("9. Para Salir");
-        print("**********************************************");
-        print("Ingrese la opcion desea:");
-        opcion = int.parse(stdin.readLineSync()!);
-
-        switch (opcion) {
-          case 1:
-            print("Esta es una ${vectorTemaInteres[0]}");
-          break;
-          case 2: 
-            print("Esta es una ${vectorTemaInteres[1]}");
-          break;
-          case 3: 
-            print("Esto es una ${vectorTemaInteres[2]}");
-          break;
-          case 4: 
-            print("Esto es una ${vectorTemaInteres[3]}");
-          break;
-          case 9: 
-            print("Hasta la Proxima");
-          break;
-        }
-      }
-      while ( opcion != 9 );
-    break;
+  // FUNCIONES AUXILIARES
+  void emparejarEstudiantesConTemas(List<String> estudiantes, List<String> temas) {
+    var random = Random();
+    estudiantes.shuffle(random);
+    temas.shuffle(random);
+    List<List<String>> matriz = [];
+    for (int i = 0; i < estudiantes.length; i++) {
+      matriz.add([estudiantes[i], temas[i % temas.length]]);
+    }
+    print("Matriz de emparejamientos (Estudiante - Tema):");
+    for (var emparejamiento in matriz) {
+      print('${emparejamiento[0]} - ${emparejamiento[1]}');
+    }
   }
 
+  // ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
+  // Punto #2 Creación de los temas de exposición.
+  print("***************************************************************************************");
+  print("Bienvenido a la aplicación de selección aleatoria de estudiantes y temas de exposición.");
+  print("Desea seleccionar los grupos con temas predefinidos (opción 1) o temas de su interés (opción 2) o salir (opción 9)?");
+  opcion = int.parse(stdin.readLineSync()!);
+  
+  switch (opcion) {
+    case 1:
+      print("Ha seleccionado listas de temas y estudiantes predefinidos");
+      print("Los temas son:");
+      for (int i = 0; i < vectorTemasPredef.length; i++) {
+        print("Exposición #${i + 1}: ${vectorTemasPredef[i]}");
+      }
+      print("*" * 50);
+      print("La lista de estudiantes es:");
+      for (int i = 0; i < vectorEstudiantesPredef.length; i++) {
+        print("#${i + 1}. ${vectorEstudiantesPredef[i]}");
+      }
+      print("*" * 50);
+      print("La lista aleatoria temas/estudiantes es:");
+      emparejarEstudiantesConTemas(vectorEstudiantesPredef, vectorTemasPredef);
+      break;
+      
+    case 2:
+      print("Ha seleccionado temas de su interés");
+      print("Ingrese la cantidad de temas en total para el grupo:");
+      int cantTemas = int.parse(stdin.readLineSync()!);
+      for (int i = 0; i < cantTemas; i++) {
+        print("Ingrese el tema #${i + 1}:");
+        String tema = stdin.readLineSync()!;
+        vectorTemaInteres.add(tema);
+        print("Ingrese nivel de complejidad para este tema #${i + 1} ${tema}:");
+        print("Seleccione el nivel de complejidad:");
+        for (int j = 0; j < vectorComplejidad.length; j++) {
+          print("${j + 1}. Nivel: ${vectorComplejidad[j]}");
+        }
+        int complejidad = int.parse(stdin.readLineSync()!);
+        if (complejidad < 1 || complejidad > 4) {
+          print("Opción incorrecta. Seleccionando nivel por defecto: ${vectorComplejidad[0]}");
+          complejidad = 1;
+        }
+        print("Para el tema #${i + 1} ${tema}, el nivel de complejidad es ${vectorComplejidad[complejidad - 1]}.");
+      }
+      print("Ingrese la cantidad de estudiantes del grupo:");
+      int cantEstudiantes = int.parse(stdin.readLineSync()!);
+      for (int i = 0; i < cantEstudiantes; i++) {
+        print("Ingrese estudiante #${i + 1}:");
+        String estudiante = stdin.readLineSync()!;
+        vectorEstudiantesInteres.add(estudiante);
+      }
+      print("La lista aleatoria temas/estudiantes es:");
+      emparejarEstudiantesConTemas(vectorEstudiantesInteres, vectorTemaInteres);
+      break;
+
+    case 9:
+      print("Hasta la próxima");
+      break;
+
+    default:
+      print("Opción incorrecta. Por favor, intente de nuevo.");
+  }
 }
