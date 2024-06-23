@@ -4,7 +4,7 @@ void main() {
 
   //DECLARACION VARIABLES - LISTAS - MATRICES
   int opcion;      //Variable para preguntar opcion del menu 
-  List <String> vectorTemasPredef = ['tema1', 'tema2','tema3','tema4','tema5','tema6','tema7'];   //Vector para temas.
+  List <String> vectorTemasPredef = ['P.O.O', 'Diferencia entre P.O.O y programacion estructurada','Qué es objejo? Que es clase?, diferencia entre ambos','Qué es abstracción?','Qué es encapsulamiento?','Qué es herencia?','Qué es polimorfismo? y un ejemplo', 'Cuáles son los principales diagramas de UML?'];   //Vector para temas.
   List <String> vectorTemaInteres =[];
   String tema;
   int cantTemas;                      //Cantidad de temas que se ingresan
@@ -50,17 +50,22 @@ void main() {
   opcion = int.parse(stdin.readLineSync()!);
   switch  (opcion) {
     case 1:
-      print("Ha seleccionado lista de temas predefinidos");
+      print("Ha seleccionado listas de temas y estudiantes predefinidos");
       print("Escoja el tema a exponer de la siguiente lista:");
       print("Los temas son:");
       for (int i = 0; i < vectorTemasPredef.length; i++ ) {
-        print("Tema # ${i+1}: ${vectorTemasPredef[i]}");
+        print("Exposición # ${i+1}: ${vectorTemasPredef[i]}");
       }
+      print("*"*50);
       //vectorTemasPredef = Random().nextInt(vectorTemasPredef[i]);
       print("La lista de estudiantes es:"); 
       for (int i = 0; i < vectorEstudiantesPredef.length; i++ ) {
-        print("# ${i+1}: ${vectorEstudiantesPredef[i]}");
+        print("# ${i+1}. ${vectorEstudiantesPredef[i]}");
       }
+      print("*"*50);
+    print("La lista aleatoria temas/estudiantes es:");
+
+    
     break;
     case 2:
       print("Ha seleccionado temas de su interés");
