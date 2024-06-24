@@ -15,7 +15,7 @@ void main() {
     'Cuáles son los principales diagramas de UML?'
   ]; // Vector para temas predefinidos
   List<String> vectorTemaInteres = [];
-  List<String> vectorEstudiantesPredef = [
+  List<String> vectorEstudiantesPredef = [  // Lista de estudiantes predefinidos
     'ANDRES FELIPE SANCHEZ HURTADO', 'ANGIE DAHIANA RIOS QUINTERO', 'CRISTIAN ALVAREZ ARANZAZU', 
     'DANIEL ESTIVEN ARBOLEDA DUQUE', 'DAVID ANDRES MORALES GUAPACHA', 'DAVID STIVEN OCAMPO LONDOÑO', 
     'ESTEBAN REYES AGUDELO', 'JACOBO GALVIS JIMENEZ', 'JAIME ANDRES CALLE SALAZAR', 'JEFERSON MAURICIO HERNANDEZ LADINO', 
@@ -25,7 +25,7 @@ void main() {
     'SAMUEL CASTAÑO CARDONA', 'JUAN JOSÉ POSADA PÉREZ', 'ALEJANDRO SERNA LONDOÑO', 
     'JUAN MANUEL ZULUAGA RINCON', 'JUAN DANIEL GOMEZ LASERNA', 'YERSON STIVEN HERRERA OBANDO', 
     'MATEO HERRERA VARGAS', 'ALEJANDRO VALLEJO ESCOBAR'
-  ]; // Lista de estudiantes predefinidos
+  ]; 
   List<String> vectorComplejidad = ['Muy fácil', 'Fácil', 'Medio', 'Difícil']; // Vector para complejidad de los temas
   List<String> vectorEstudiantesInteres = [];
   
@@ -66,8 +66,33 @@ void main() {
       print("*" * 50);
       print("La lista aleatoria temas/estudiantes es:");
       emparejarEstudiantesConTemas(vectorEstudiantesPredef, vectorTemasPredef);
-      break;
-      
+
+      //Menu para para realizar los tres intentos definitivos.
+      do {
+      print("Deseas realizar los tres intentos aletarios ?:");
+      print("El tercer intento sera el definitivo !");
+      print("1. Para tres intentos aleatorios");
+      print("2. Para Salir");
+      opcion = int.parse(stdin.readLineSync()!);
+        switch (opcion) {
+          case 1:
+            for (int i = 0; i < 3; i++) {
+              print("*" * 60);
+              print("Intento # ${i+1}:");
+              print("La lista aleatoria temas/estudiantes es:");
+              emparejarEstudiantesConTemas(vectorEstudiantesPredef, vectorTemasPredef);
+            }
+          break;
+          case 2:
+            print("Hasta la proxima !");
+          break;
+          default:
+            print("Error Ingrese opcion # 1 o opcion # 2 para salir.");
+          break;
+        }
+      }
+      while (opcion != 2);
+    break; 
     case 2:
       print("Ha seleccionado temas de su interés");
       print("Ingrese la cantidad de temas en total para el grupo:");
@@ -97,8 +122,33 @@ void main() {
       }
       print("La lista aleatoria temas/estudiantes es:");
       emparejarEstudiantesConTemas(vectorEstudiantesInteres, vectorTemaInteres);
-      break;
 
+      //Menu para para realizar los tres intentos definitivos.
+      do {
+      print("Deseas realizar los tres intentos aletarios ?:");
+      print("El tercer intento sera el definitivo !");
+      print("1. Para tres intentos aleatorios");
+      print("2. Para Salir");
+      opcion = int.parse(stdin.readLineSync()!);
+        switch (opcion) {
+          case 1:
+            for (int i = 0; i < 3; i++) {
+              print("*" * 60);
+              print("Intento # ${i+1}:");
+              print("La lista aleatoria temas/estudiantes es:");
+              emparejarEstudiantesConTemas(vectorEstudiantesInteres, vectorTemaInteres);
+            }
+          break;
+          case 2:
+            print("Hasta la proxima !");
+          break;
+          default:
+            print("Error Ingrese opcion # 1 o opcion # 2 para salir.");
+          break;
+        }
+      }
+      while (opcion != 2);
+    break;
     case 9:
       print("Hasta la próxima");
       break;
