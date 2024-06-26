@@ -38,10 +38,28 @@ void main() {
     for (int i = 0; i < estudiantes.length; i++) {
       matriz.add([estudiantes[i], temas[i % temas.length]]);
     }
-    print("Matriz de emparejamientos (Estudiante - Tema):");
+    // Mostrar los emparejamientos
+    Map<String, List<String>> temasConEstudiantes = {};
     for (var emparejamiento in matriz) {
-      print('${emparejamiento[0]} - ${emparejamiento[1]}');
+      String tema = emparejamiento[1];
+      if (!temasConEstudiantes.containsKey(tema)) {
+        temasConEstudiantes[tema] = [];
+      }
+      temasConEstudiantes[tema]!.add(emparejamiento[0]);
     }
+    // Imprimir los resultados
+    temasConEstudiantes.forEach((tema, estudiantes) {
+      print("Tema: $tema");
+      print("Estudiantes:");
+      estudiantes.forEach((estudiante) {
+        print("- $estudiante");
+      });
+      print("***************");
+    });
+    // print("Matriz de emparejamientos (Estudiante - Tema):");
+    // for (var emparejamiento in matriz) {
+    //   print('${emparejamiento[0]} - ${emparejamiento[1]}');
+    // }
   }
 
   // ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
@@ -69,6 +87,7 @@ void main() {
 
       //Menu para para realizar los tres intentos definitivos.
       do {
+      print("*" * 60);
       print("Deseas realizar los tres intentos aletarios ?:");
       print("El tercer intento sera el definitivo !");
       print("1. Para tres intentos aleatorios");
