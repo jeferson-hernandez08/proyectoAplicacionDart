@@ -68,6 +68,9 @@ void main() {
     print("***************************************************************************************");
     print("Bienvenido a la aplicación de selección aleatoria de estudiantes y temas de exposición.");
     print("Desea seleccionar los grupos con temas predefinidos (opción 1) o temas de su interés (opción 2) o salir (opción 9)?");
+    print("1. Temas predefinidos.");
+    print("2. Temas de su interés");
+    print("9. Para salir de la aplicacion.");
     opcion = int.parse(stdin.readLineSync()!);
     
     switch (opcion) {
@@ -173,11 +176,8 @@ void main() {
         print("Hasta la próxima !");
       break;
       default:
-        print("Opción incorrecta !.");
-        print("Ingrese:");
-        print("1. Temas predefinidos.");
-        print("2. Temas de su interes.");
-        print("9. Para salir del sistema.");
+        print("Opción incorrecta intente nuevamente !.");
+      break;
     }
   }
   while (opcion != 9);
