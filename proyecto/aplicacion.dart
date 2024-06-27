@@ -56,10 +56,6 @@ void main() {
       });
       print("*****************************************");
     });
-    // print("Matriz de emparejamientos (Estudiante - Tema):");
-    // for (var emparejamiento in matriz) {
-    //   print('${emparejamiento[0]} - ${emparejamiento[1]}');
-    // }
   }
 
   // ENTRADA DATOS - PROCESOS FORMULAS - SALIDA DATOS.
