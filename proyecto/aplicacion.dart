@@ -28,6 +28,7 @@ void main() {
   ]; 
   List<String> vectorComplejidad = ['Muy fácil', 'Fácil', 'Medio', 'Difícil']; // Vector para complejidad de los temas
   List<String> vectorEstudiantesInteres = [];
+  int cantiEstudiantesTemas = 0;
   
   // FUNCIONES AUXILIARES
   void emparejarEstudiantesConTemas(List<String> estudiantes, List<String> temas) {
@@ -130,43 +131,70 @@ void main() {
             print("Opción incorrecta. Seleccionando nivel por defecto: ${vectorComplejidad[0]}");
             complejidad = 1;
           }
-          print("Para el tema #${i + 1} ${tema}, el nivel de complejidad es ${vectorComplejidad[complejidad - 1]}.");
+          else if ( complejidad == 1) {
+                print("Para el tema #${i + 1} ${tema}, el nivel de complejidad es ${vectorComplejidad[complejidad - 1]}.");
+                cantiEstudiantesTemas++;
+                print("La cantidad de estudiantes va en $cantiEstudiantesTemas");
+               }
+               else if ( complejidad == 2) {
+                     print("Para el tema #${i + 1} ${tema}, el nivel de complejidad es ${vectorComplejidad[complejidad - 1]}.");
+                     cantiEstudiantesTemas +=2;
+                     print("La cantidad de estudiantes va en $cantiEstudiantesTemas");
+                    }
+                    else if ( complejidad == 3) {
+                          print("Para el tema #${i + 1} ${tema}, el nivel de complejidad es ${vectorComplejidad[complejidad - 1]}.");
+                          cantiEstudiantesTemas +=3;
+                          print("La cantidad de estudiantes va en $cantiEstudiantesTemas");
+                         }
+                         else if ( complejidad == 4) {
+                               print("Para el tema #${i + 1} ${tema}, el nivel de complejidad es ${vectorComplejidad[complejidad - 1]}.");
+                               cantiEstudiantesTemas +=4;
+                               print("La cantidad de estudiantes va en $cantiEstudiantesTemas");
+                              }             
         }
-        print("Ingrese la cantidad de estudiantes del grupo:");
+        print("Ingrese la cantidad de estudiantes para asignarlos a los temas:");
+        print("La cantidad de estudiantes debe ser $cantiEstudiantesTemas, para asignarlos al los temas.");
         int cantEstudiantes = int.parse(stdin.readLineSync()!);
-        for (int i = 0; i < cantEstudiantes; i++) {
-          print("Ingrese estudiante #${i + 1}:");
-          String estudiante = stdin.readLineSync()!;
-          vectorEstudiantesInteres.add(estudiante);
-        }
-        print("La lista aleatoria temas/estudiantes es:");
-        emparejarEstudiantesConTemas(vectorEstudiantesInteres, vectorTemaInteres);
-
-        //Menu para para realizar los tres intentos definitivos.
-        do {
-        print("Deseas realizar los tres intentos aletarios ?:");
-        print("El tercer intento sera el definitivo !");
-        print("1. Para tres intentos aleatorios.");
-        print("2. Ir a menu principal.");
-        opcion = int.parse(stdin.readLineSync()!);
-          switch (opcion) {
-            case 1:
-              for (int i = 0; i < 3; i++) {
-                print("*" * 60);
-                print("Intento # ${i+1}:");
-                print("La lista aleatoria temas/estudiantes es:");
-                emparejarEstudiantesConTemas(vectorEstudiantesInteres, vectorTemaInteres);
-              }
-            break;
-            case 2:
-              print("Hasta la proxima !");
-            break;
-            default:
-              print("Error Ingrese opcion # 1 o opcion # 2 para salir.");
-            break;
+        if ( cantEstudiantes == cantiEstudiantesTemas ) {
+          for (int i = 0; i < cantEstudiantes; i++) {
+            print("Ingrese estudiante #${i + 1}:");
+            String estudiante = stdin.readLineSync()!;
+            vectorEstudiantesInteres.add(estudiante);
           }
+          print("La lista aleatoria temas/estudiantes es:");
+          emparejarEstudiantesConTemas(vectorEstudiantesInteres, vectorTemaInteres);
+
+          //Menu para para realizar los tres intentos definitivos.
+          do {
+          print("Deseas realizar los tres intentos aletarios ?:");
+          print("El tercer intento sera el definitivo !");
+          print("1. Para tres intentos aleatorios.");
+          print("2. Ir a menu principal.");
+          opcion = int.parse(stdin.readLineSync()!);
+            switch (opcion) {
+              case 1:
+                for (int i = 0; i < 3; i++) {
+                  print("*" * 60);
+                  print("Intento # ${i+1}:");
+                  print("La lista aleatoria temas/estudiantes es:");
+                  emparejarEstudiantesConTemas(vectorEstudiantesInteres, vectorTemaInteres);
+                }
+              break;
+              case 2:
+                print("Hasta la proxima !");
+              break;
+              default:
+                print("Error Ingrese opcion # 1 o opcion # 2 para salir.");
+              break;
+            }
+          }
+          while (opcion != 2);
         }
-        while (opcion != 2);
+        else {
+          print("La cantidad de estudiantes deben ser igual a los estudianes de los temas  de complejidad");
+          print("Debera buscar mas temas o mas estudiantes para no quedar por fuera.");
+          print("Valide e intente mas tarde.");
+        }
       break;
       case 9:
         print("Hasta la próxima !");
