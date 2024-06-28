@@ -152,6 +152,7 @@ void main() {
                                print("La cantidad de estudiantes va en $cantiEstudiantesTemas");
                               }             
         }
+         print("*" * 60);
         print("Ingrese la cantidad de estudiantes para asignarlos a los temas:");
         print("La cantidad de estudiantes debe ser $cantiEstudiantesTemas, para asignarlos al los temas.");
         int cantEstudiantes = int.parse(stdin.readLineSync()!);
