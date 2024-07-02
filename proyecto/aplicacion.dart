@@ -3,8 +3,8 @@ import 'dart:math';
 
 void main() {
   // DECLARACIÓN VARIABLES - LISTAS - MATRICES
-  int opcion; // Variable para preguntar opción del menú 
-  List<String> vectorTemasPredef = [
+  int opcion;   //Variable para preguntar opción del menú 
+  List<String> vectorTemasPredef = [  // Vector para temas predefinidos
     'P.O.O', 
     'Diferencia entre P.O.O y programacion estructurada', 
     'Qué es objeto? Qué es clase? Diferencia entre ambos',
@@ -13,8 +13,7 @@ void main() {
     'Qué es herencia?',
     'Qué es polimorfismo? Y un ejemplo',
     'Cuáles son los principales diagramas de UML?'
-  ]; // Vector para temas predefinidos
-  List<String> vectorTemaInteres = [];
+  ]; 
   List<String> vectorEstudiantesPredef = [  // Lista de estudiantes predefinidos
     'ANDRES FELIPE SANCHEZ HURTADO', 'ANGIE DAHIANA RIOS QUINTERO', 'CRISTIAN ALVAREZ ARANZAZU', 
     'DANIEL ESTIVEN ARBOLEDA DUQUE', 'DAVID ANDRES MORALES GUAPACHA', 'DAVID STIVEN OCAMPO LONDOÑO', 
@@ -26,8 +25,9 @@ void main() {
     'JUAN MANUEL ZULUAGA RINCON', 'JUAN DANIEL GOMEZ LASERNA', 'YERSON STIVEN HERRERA OBANDO', 
     'MATEO HERRERA VARGAS', 'ALEJANDRO VALLEJO ESCOBAR'
   ]; 
-  List<String> vectorComplejidad = ['Muy fácil', 'Fácil', 'Medio', 'Difícil']; // Vector para complejidad de los temas
+  List<String> vectorTemaInteres = [];
   List<String> vectorEstudiantesInteres = [];
+  List<String> vectorComplejidad = ['Muy fácil', 'Fácil', 'Medio', 'Difícil']; // Vector para complejidad de los temas
   int cantiEstudiantesTemas = 0;
   
   // FUNCIONES AUXILIARES
@@ -123,7 +123,7 @@ void main() {
           vectorTemaInteres.add(tema);
           print("Ingrese nivel de complejidad para este tema #${i + 1} ${tema}:");
           print("Seleccione el nivel de complejidad:");
-          for (int j = 0; j < vectorComplejidad.length; j++) {
+          for (int j = 0; j < vectorComplejidad.length; j++) {   //Otra forma de imprimir menus con for. 
             print("${j + 1}. Nivel: ${vectorComplejidad[j]}");
           }
           int complejidad = int.parse(stdin.readLineSync()!);
@@ -167,11 +167,11 @@ void main() {
 
           //Menu para para realizar los tres intentos definitivos.
           do {
-          print("Deseas realizar los tres intentos aletarios ?:");
-          print("El tercer intento sera el definitivo !");
-          print("1. Para tres intentos aleatorios.");
-          print("2. Ir a menu principal.");
-          opcion = int.parse(stdin.readLineSync()!);
+            print("Deseas realizar los tres intentos aletarios ?:");
+            print("El tercer intento sera el definitivo !");
+            print("1. Para tres intentos aleatorios.");
+            print("2. Ir a menu principal.");
+            opcion = int.parse(stdin.readLineSync()!);
             switch (opcion) {
               case 1:
                 for (int i = 0; i < 3; i++) {
