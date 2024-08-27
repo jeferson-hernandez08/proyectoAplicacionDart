@@ -40,7 +40,7 @@ void main() {
       matriz.add([estudiantes[i], temas[i % temas.length]]);
     }
     // Mostrar los emparejamientos
-    Map<String, List<String>> temasConEstudiantes = {};
+    Map<String, List<String>> temasConEstudiantes = {};  //Map para agrupar los estudiantes por tema. 
     for (var emparejamiento in matriz) {
       String tema = emparejamiento[1];
       if (!temasConEstudiantes.containsKey(tema)) {
